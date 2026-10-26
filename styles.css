@@ -106,14 +106,13 @@ body {
 
 .circle {
     position: absolute;
-    /* Base width and height removed, now handled inline in HTML for flexibility */
-    border: 5px solid #B28D42; /* Slightly thicker border */
+    border: 5px solid #B28D42;
     border-radius: 50%;
-    box-shadow: 0 0 25px #B28D42, inset 0 0 25px #B28D42; /* Stronger glow */
+    box-shadow: 0 0 25px #B28D42, inset 0 0 25px #B28D42;
     transform: translate(-50%, -50%);
     animation: pulse 2s infinite;
-    background-color: rgba(178, 141, 66, 0.2); /* Slightly more transparent interior */
-    pointer-events: none; /* Ensures the circle doesn't interfere with potential image interactions */
+    background-color: rgba(178, 141, 66, 0.2);
+    pointer-events: none;
 }
 
 @keyframes pulse {
@@ -194,7 +193,10 @@ body {
 
 .profile-card h3 {
     margin-bottom: 10px;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 1px;
+    color: #B28D42;
 }
 
 .profile-card p {
