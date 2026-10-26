@@ -1,0 +1,234 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #00205B;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.header {
+    background-color: #B28D42;
+    color: #00205B;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    z-index: 10;
+}
+
+.slideshow-container {
+    position: relative;
+    flex-grow: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+
+.slide.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 5;
+}
+
+.title-slide {
+    text-align: center;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.title-slide h2 {
+    color: #B28D42;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.full-poster {
+    max-height: 50vh;
+    border: 4px solid #B28D42;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.content-wrapper {
+    display: flex;
+    width: 85%;
+    max-width: 1300px;
+    height: 85%;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 2px solid #B28D42;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.image-section {
+    width: 50%;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.poster-wrapper {
+    position: relative;
+    height: 100%;
+    aspect-ratio: 3 / 4.2;
+}
+
+.poster-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.circle {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: 4px solid #B28D42;
+    border-radius: 50%;
+    box-shadow: 0 0 20px #B28D42, inset 0 0 20px #B28D42;
+    transform: translate(-50%, -50%);
+    animation: pulse 2s infinite;
+    background-color: rgba(178, 141, 66, 0.3);
+}
+
+@keyframes pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(0.95);
+        box-shadow: 0 0 0 0 rgba(178, 141, 66, 0.7);
+    }
+    70% {
+        transform: translate(-50%, -50%) scale(1.1);
+        box-shadow: 0 0 0 20px rgba(178, 141, 66, 0);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(0.95);
+        box-shadow: 0 0 0 0 rgba(178, 141, 66, 0);
+    }
+}
+
+.text-section {
+    width: 50%;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.text-section h2 {
+    color: #B28D42;
+    font-size: 2.8rem;
+    margin-bottom: 25px;
+}
+
+.text-section p {
+    font-size: 1.4rem;
+    line-height: 1.6;
+}
+
+.about-slide {
+    text-align: center;
+    width: 90%;
+}
+
+.about-slide h2 {
+    color: #B28D42;
+    font-size: 3rem;
+    margin-bottom: 50px;
+}
+
+.profiles {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.profile-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    border: 2px solid #B28D42;
+    width: 250px;
+}
+
+.avatar {
+    width: 150px;
+    height: 150px;
+    background-color: #B28D42;
+    color: #00205B;
+    border-radius: 50%;
+    margin: 0 auto 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border: 4px solid #fff;
+    overflow: hidden;
+}
+
+.profile-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+}
+
+.profile-card p {
+    color: #ddd;
+    font-size: 1.1rem;
+}
+
+.controls {
+    background-color: #00153B;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    z-index: 10;
+}
+
+button {
+    padding: 12px 40px;
+    font-size: 1.2rem;
+    background-color: #B28D42;
+    color: #00205B;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+button:hover:not(:disabled) {
+    background-color: #d4b05a;
+}
+
+button:disabled {
+    background-color: #333;
+    color: #777;
+    cursor: not-allowed;
+}
