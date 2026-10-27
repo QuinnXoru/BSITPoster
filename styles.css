@@ -69,6 +69,7 @@ body {
     border: 4px solid #B28D42;
     border-radius: 10px;
     margin-bottom: 20px;
+    max-width: 100%;
 }
 
 .content-wrapper {
@@ -152,6 +153,10 @@ body {
 .about-slide {
     text-align: center;
     width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .about-slide h2 {
@@ -233,4 +238,75 @@ button:disabled {
     background-color: #333;
     color: #777;
     cursor: not-allowed;
+}
+
+/* --- MOBILE RESPONSIVENESS MEDIA QUERY --- */
+@media (max-width: 850px) {
+    .header h1 {
+        font-size: 1.2rem;
+    }
+
+    .title-slide h2 {
+        font-size: 1.8rem;
+    }
+    
+    .title-slide p {
+        font-size: 1rem;
+    }
+
+    .content-wrapper {
+        flex-direction: column;
+        width: 90%;
+        height: 90%;
+        overflow-y: auto; /* Allows scrolling down to read the text */
+    }
+
+    .image-section {
+        width: 100%;
+        height: auto;
+        padding: 20px 10px;
+    }
+
+    .poster-wrapper {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .text-section {
+        width: 100%;
+        padding: 20px 30px 40px 30px;
+        text-align: center;
+        justify-content: flex-start;
+    }
+
+    .text-section h2 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+
+    .text-section p {
+        font-size: 1.1rem;
+    }
+
+    .about-slide {
+        justify-content: flex-start;
+        padding-top: 40px;
+        overflow-y: auto; /* Allows scrolling if profiles overflow */
+    }
+
+    .about-slide h2 {
+        font-size: 2.2rem;
+        margin-bottom: 30px;
+    }
+
+    .profiles {
+        gap: 20px;
+        padding-bottom: 40px;
+    }
+
+    .profile-card {
+        width: 100%;
+        max-width: 300px;
+    }
 }
